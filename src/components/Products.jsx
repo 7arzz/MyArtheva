@@ -12,7 +12,7 @@ function Products() {
     },
     {
       icon: "✦",
-      tag: "Neroli · Cedarwood",
+      tag: "administrative · admin",
       title: "Morning",
       accent: "Bloom",
       desc: "Neroli blossom and cedarwood bark, pressed into a weightless serum that warms to the skin.",
