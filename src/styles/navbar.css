@@ -1,0 +1,68 @@
+/* ===== NAVBAR ===== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 60px;
+
+  background: rgba(255, 248, 240, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(183, 110, 121, 0.15);
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.12);
+
+  z-index: 1000;
+}
+
+/* logo */
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--rose-gold);
+  letter-spacing: 1px;
+}
+
+/* menu container */
+.navbar ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+/* menu item */
+.navbar li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* hover underline animation */
+.navbar li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+
+  background: var(--soft-gold);
+  transition: width 0.3s ease;
+}
+
+.navbar li:hover {
+  color: var(--rose-gold);
+}
+
+.navbar li:hover::after {
+  width: 100%;
+}

@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap");
+
+/* ─── Tokens ─────────────────────────────────────────── */
+:root {
+  --parchment: #fdf6ee;
+  --parchment-mid: #f5e9d8;
+  --linen: #f0e2ce;
+  --linen-dark: #e0cdb6;
+  --ink: #2e2118;
+  --ink-mid: #5c3d2b;
+  --ink-light: #9a7660;
+  --rose: #b76e79;
+  --rose-dark: #9a5560;
+  --rose-pale: rgba(183, 110, 121, 0.1);
+  --rose-border: rgba(183, 110, 121, 0.25);
+  --rose-glow: rgba(183, 110, 121, 0.15);
+  --gold: #c8a96e;
+  --gold-pale: rgba(200, 169, 110, 0.18);
+  --gold-border: rgba(200, 169, 110, 0.35);
+  --shadow-warm: rgba(94, 50, 30, 0.08);
+  --shadow-deep: rgba(94, 50, 30, 0.16);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ─── Section ────────────────────────────────────────── */
+.divisions {
+  position: relative;
+  padding: 140px 60px 160px;
+  background-color: var(--parchment);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.divisions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.divisions::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 15% 25%,
+      rgba(200, 169, 110, 0.07) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 45% 40% at 85% 75%,
+      rgba(183, 110, 121, 0.06) 0%,
+      transparent 55%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+.divisions-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.divisions-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s var(--ease-out-expo) 0.1s forwards;
+}
+
+.divisions-label::before,
+.divisions-label::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold-border);
+}
+
+.divisions-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 auto 16px;
+  max-width: 540px;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 1s var(--ease-out-expo) 0.25s forwards;
+}
+
+.divisions-header h2 em {
+  font-style: italic;
+  color: var(--rose-dark);
+}
+
+.divisions-header p {
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ink-light);
+  max-width: 480px;
+  margin: 0 auto 0;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 1s var(--ease-out-expo) 0.4s forwards;
+}
+
+.divisions-header-rule {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-border),
+    transparent
+  );
+  margin: 22px auto 0;
+  animation: ruleExpand 1s var(--ease-out-expo) 0.65s forwards;
+}
+
+/* ─── Grid ───────────────────────────────────────────── */
+.divisions-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.team-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.team-card:nth-child(2) {
+  animation-delay: 0.26s;
+  margin-top: 36px;
+}
+.team-card:nth-child(3) {
+  animation-delay: 0.37s;
+}
+.team-card:nth-child(4) {
+  animation-delay: 0.48s;
+  margin-top: 36px;
+}
+.team-card:nth-child(5) {
+  animation-delay: 0.59s;
+}
+.team-card:nth-child(6) {
+  animation-delay: 0.7s;
+  margin-top: 36px;
+}
+
+/* ─── Card shell ─────────────────────────────────────── */
+.team-card {
+  position: relative;
+  background: var(--linen);
+  border: 1px solid var(--linen-dark);
+  border-radius: 3px;
+  padding: 32px 24px 28px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s var(--ease-out-expo) both;
+
+  transition:
+    transform 0.55s var(--ease-out-expo),
+    box-shadow 0.55s var(--ease-out-expo),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Top-left gloss */
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Gold top stripe that expands on hover */
+.team-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transition: width 0.5s var(--ease-out-expo);
+  z-index: 2;
+}
+
+.team-card:hover::after {
+  width: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  background: var(--parchment-mid);
+  border-color: var(--gold-border);
+  box-shadow:
+    0 2px 4px var(--shadow-warm),
+    0 16px 48px var(--shadow-deep),
+    0 0 0 1px var(--gold-border);
+}
+
+/* ─── Portrait frame ─────────────────────────────────── */
+.team-portrait-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+/* Outer ornamental ring */
+.team-portrait-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  transition:
+    border-color 0.35s ease,
+    transform 0.5s var(--ease-out-expo);
+}
+
+/* Inner rose-tinted ring */
+.team-portrait-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--rose-border);
+  transition: border-color 0.35s ease;
+}
+
+.team-card:hover .team-portrait-wrap::before {
+  border-color: var(--gold);
+  transform: rotate(45deg) scale(1.04);
+}
+
+.team-card img {
+  display: block;
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  filter: sepia(8%) saturate(90%);
+  transition:
+    filter 0.4s ease,
+    transform 0.5s var(--ease-out-expo);
+}
+
+.team-card:hover img {
+  filter: sepia(0%) saturate(100%);
+  transform: scale(1.04);
+}
+
+/* ─── Role badge (wax seal style) ───────────────────── */
+.team-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--rose);
+  border: 2px solid var(--parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--parchment);
+  box-shadow: 0 2px 8px rgba(154, 85, 96, 0.4);
+  transition:
+    transform 0.4s var(--ease-out-expo),
+    background 0.3s ease;
+}
+
+.team-card:hover .team-badge {
+  transform: scale(1.15) rotate(-10deg);
+  background: var(--rose-dark);
+}
+
+/* ─── Name ───────────────────────────────────────────── */
+.team-card h3 {
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.team-card h3 em {
+  font-style: italic;
+  color: var(--rose-dark);
+  display: block;
+  font-size: 0.95em;
+}
+
+.team-card:hover h3 {
+  color: var(--rose-dark);
+}
+
+/* Role label */
+.team-role {
+  position: relative;
+  z-index: 1;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0;
+}
+
+/* ─── Divider (visible on open) ─────────────────────── */
+.team-divider {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--rose-border),
+    transparent
+  );
+  margin: 16px auto 0;
+  transition: width 0.5s var(--ease-out-expo);
+  position: relative;
+  z-index: 1;
+}
+
+.team-card.open .team-divider {
+  width: 80%;
+}
+
+/* ─── Info panel ─────────────────────────────────────── */
+.team-info {
+  position: relative;
+  z-index: 1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.55s var(--ease-out-expo),
+    opacity 0.4s ease 0.1s;
+}
+
+.team-card.open .team-info {
+  max-height: 160px;
+  opacity: 1;
+}
+
+.team-info-inner {
+  padding-top: 16px;
+}
+
+.team-info p {
+  font-family: "Lora", serif;
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  margin-bottom: 14px;
+}
+
+/* Social links row */
+.team-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-link {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid var(--rose-border);
+  border-radius: 2px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.team-link:hover {
+  background: var(--rose-pale);
+  color: var(--rose-dark);
+}
+
+/* ─── Keyframes ──────────────────────────────────────── */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ruleExpand {
+  to {
+    width: 180px;
+  }
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .divisions {
+    padding: 100px 24px 120px;
+  }
+
+  .team-card:nth-child(even) {
+    margin-top: 0 !important;
+  }
+}

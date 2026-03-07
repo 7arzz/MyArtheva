@@ -1,0 +1,109 @@
+/* ===== GLOBAL RESET ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== COLOR SYSTEM ===== */
+
+:root {
+  /* brand colors */
+  --rose-gold: #b76e79;
+  --champagne: #c48e6a;
+  --soft-gold: #ffd580;
+
+  /* backgrounds */
+  --pearl-white: #f8f4ef;
+  --cream: #fff8f0;
+  --soft-cream: #fff9f5;
+
+  /* text */
+  --text-dark: #4a3a2c;
+  --text-light: #ffffff;
+}
+
+/* ===== BASE STYLE ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+  line-height: 1.6;
+
+  background: var(--pearl-white);
+  color: var(--text-dark);
+
+  overflow-x: hidden;
+}
+
+/* ===== LINKS ===== */
+
+a {
+  text-decoration: none;
+  color: var(--rose-gold);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--champagne);
+}
+
+/* ===== BUTTON ===== */
+
+button {
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  background: linear-gradient(135deg, var(--rose-gold), var(--champagne));
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(183, 110, 121, 0.35);
+}
+
+/* ===== HEADINGS ===== */
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+/* ===== SECTION BASE ===== */
+
+section {
+  padding: 80px 10%;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+}
