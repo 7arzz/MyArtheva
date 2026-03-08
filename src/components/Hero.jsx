@@ -40,7 +40,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-lines"></div>
 
       <span className="hero-eyebrow">Artheva Company</span>
@@ -54,7 +54,15 @@ function Hero() {
         aesthetic space with Artheva.
       </p>
 
-      <button className="hero-btn">Explore Products</button>
+      <button className="hero-btn">
+        {" "}
+        <a
+          href="#products"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          Explore Products
+        </a>
+      </button>
     </section>
   );
 }

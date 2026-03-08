@@ -1,6 +1,6 @@
 import "../styles/product.css";
 
-function Products() {
+function Products({ setCart }) {
   const products = [
     {
       icon: "◈",
@@ -8,7 +8,7 @@ function Products() {
       title: "Dusk",
       accent: "Ritual",
       desc: "A warm, grounding blend for evening — vetiver root and Bulgarian rose in a base of golden jojoba.",
-      price: 48,
+      price: 20000,
     },
     {
       icon: "✦",
@@ -16,7 +16,7 @@ function Products() {
       title: "Morning",
       accent: "Bloom",
       desc: "Neroli blossom and cedarwood bark, pressed into a weightless serum that warms to the skin.",
-      price: 72,
+      price: 25000,
     },
     {
       icon: "◇",
@@ -24,7 +24,7 @@ function Products() {
       title: "Still",
       accent: "Water Balm",
       desc: "Night jasmine and aged sandalwood in a slow-melting balm. For hands that have worked hard.",
-      price: 36,
+      price: 25000,
     },
     {
       icon: "❋",
@@ -32,12 +32,12 @@ function Products() {
       title: "Ember",
       accent: "Rest",
       desc: "True lavender and warm amber resin, blended for the quiet hour before sleep takes you.",
-      price: 54,
+      price: 25000,
     },
   ];
 
   return (
-    <section className="products">
+    <section className="products" id="products">
       <div className="products-header">
         <p className="products-label">The Collection</p>
         <h2>
@@ -70,7 +70,12 @@ function Products() {
                   {p.price}
                 </span>
 
-                <button className="product-btn">Add to cart</button>
+                <button
+                  className="product-btn"
+                  onClick={() => setCart((prev) => [...prev, p])}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </article>

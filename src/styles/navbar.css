@@ -2,9 +2,13 @@
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 20px;
+
+  max-width: 1200px;
+  width: calc(100% - 40px);
+  margin: auto;
   left: 0;
-  width: 100%;
+  right: 0;
 
   display: flex;
   justify-content: space-between;
@@ -17,6 +21,8 @@
 
   border-bottom: 1px solid rgba(183, 110, 121, 0.15);
   box-shadow: 0 4px 15px rgba(183, 110, 121, 0.12);
+  border-radius: 50px;
+  border: 2px solid var(--rose-gold);
 
   z-index: 1000;
 }
@@ -65,4 +71,74 @@
 
 .navbar li:hover::after {
   width: 100%;
+}
+
+/* ===== HAMBURGER ===== */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--rose-gold);
+  transition: 0.3s;
+}
+
+/* animasi hamburger jadi X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 30px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(255, 248, 240, 0.95);
+    backdrop-filter: blur(15px);
+
+    gap: 24px;
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(183, 110, 121, 0.15);
+
+    transform: translateY(-150%);
+    transition: 0.4s ease;
+  }
+
+  .navbar ul.active {
+    transform: translateY(0);
+  }
+
+  .navbar li {
+    font-size: 1rem;
+  }
 }

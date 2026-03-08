@@ -1,15 +1,38 @@
+import { useState } from "react";
 import "../styles/navbar.css";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <h2>Artheva</h2>
+      <div className="logo">Artheva</div>
 
-      <ul>
-        <li>Home</li>
-        <li>Products</li>
-        <li>How It Works</li>
-        <li>Team</li>
+      <div
+        className={`menu-toggle ${open ? "active" : ""}`}
+        onClick={() => setOpen(!open)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul className={open ? "active" : ""}>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#products">Products</a>
+        </li>
+        <li>
+          <a href="#how-it-works">How It Works</a>
+        </li>
+        <li>
+          <a href="#team">Team</a>
+        </li>
       </ul>
     </nav>
   );

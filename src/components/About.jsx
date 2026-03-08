@@ -2,7 +2,7 @@ import "../styles/about.css";
 
 function About() {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="about-flourish about-flourish--left">&amp;</div>
       <div className="about-flourish about-flourish--right">&amp;</div>
 

@@ -1,0 +1,177 @@
+/* ===== FOOTER ===== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap");
+
+.footer {
+  padding: 100px 20px 0;
+  background: #fdf6f0;
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 10% 110%,
+      rgba(198, 130, 100, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 90% 100%,
+      rgba(198, 130, 100, 0.05) 0%,
+      transparent 60%
+    );
+  position: relative;
+  overflow: hidden;
+  font-family: "Jost", sans-serif;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(198, 130, 100, 0.4),
+    transparent
+  );
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 48px 60px;
+  position: relative;
+}
+
+/* ── brand ── */
+
+.footer-brand h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--rose-gold);
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.footer-brand p {
+  color: #8a7570;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 240px;
+}
+
+/* ── links & social headings ── */
+
+.footer-links h4,
+.footer-social h4 {
+  font-family: "Jost", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b89a8f;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-links h4::after,
+.footer-social h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: var(--rose-gold);
+  transition: width 0.4s ease;
+}
+
+.footer-links:hover h4::after,
+.footer-social:hover h4::after {
+  width: 40px;
+}
+
+/* ── lists ── */
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #7a6b66;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    letter-spacing 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.footer-links li::before,
+.footer-social li::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background: var(--rose-gold);
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+}
+
+.footer-links li:hover,
+.footer-social li:hover {
+  color: var(--rose-gold);
+  letter-spacing: 0.02em;
+}
+
+.footer-links li:hover::before,
+.footer-social li:hover::before {
+  width: 14px;
+}
+
+/* ── bottom ── */
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 80px;
+  padding: 28px 20px;
+  font-size: 0.775rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: #b0a09a;
+  position: relative;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(198, 130, 100, 0.25),
+    transparent
+  );
+}
