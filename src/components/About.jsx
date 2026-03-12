@@ -2,46 +2,44 @@ import "../styles/about.css";
 
 function About() {
   return (
-    <section className="about" id="about">
-      <div className="about-flourish about-flourish--left">&amp;</div>
-      <div className="about-flourish about-flourish--right">&amp;</div>
-
-      <div className="about-inner">
-        <div className="about-ornament">
-          <div className="about-ornament-line"></div>
-          <div className="about-ornament-diamond"></div>
-          <div className="about-ornament-line"></div>
+    <section className="about-premium" id="about">
+      <div className="ap-glow"></div>
+      <div className="ap-glow ap-glow-right"></div>
+      
+      <div className="ap-container">
+        <div className="ap-header">
+          <span className="ap-eyebrow">Our Story</span>
+          <h2 className="ap-title">
+            Where <span className="ap-text-gradient">craft</span> meets intention
+          </h2>
+          <div className="ap-line"></div>
         </div>
 
-        <p className="about-label">Our story</p>
+        <div className="ap-content-wrapper">
+          <div className="ap-glass-card">
+            <div className="ap-card-icon">✧</div>
+            <p>
+              We believe that beauty is not an afterthought — it is the very
+              foundation of everything we do. Each piece is shaped with careful
+              hands, unhurried attention, and a devotion to the materials that make
+              it real.
+            </p>
+          </div>
 
-        <h2>
-          Where <em>craft</em> meets intention
-        </h2>
+          <div className="ap-glass-card">
+            <div className="ap-card-icon">✦</div>
+            <p>
+              Born from a small atelier tucked between old pines and open fields,
+              our work carries the quietness of that place. We make things meant to
+              last, things that age with grace, things that feel like home.
+            </p>
+          </div>
+        </div>
 
-        <div className="about-underline"></div>
-
-        <p>
-          We believe that beauty is not an afterthought — it is the very
-          foundation of everything we do. Each piece is shaped with careful
-          hands, unhurried attention, and a devotion to the materials that make
-          it real.
-        </p>
-
-        <p>
-          Born from a small atelier tucked between old pines and open fields,
-          our work carries the quietness of that place. We make things meant to
-          last, things that age with grace, things that feel like home.
-        </p>
-
-        <div className="about-rule">
-          <div className="about-rule-line"></div>
-
-          <span className="about-rule-text">
-            Est. 2018 — Handmade with love
-          </span>
-
-          <div className="about-rule-line"></div>
+        <div className="ap-footer">
+          <div className="ap-rule"></div>
+          <span className="ap-est">Est. 2018 — Handmade with love</span>
+          <div className="ap-rule"></div>
         </div>
       </div>
     </section>
