@@ -38,7 +38,7 @@ function About() {
 
         <div className="ap-footer">
           <div className="ap-rule"></div>
-          <span className="ap-est">Est. 2018 — Handmade with love</span>
+          <span className="ap-est">Est. 2025 — Handmade with love</span>
           <div className="ap-rule"></div>
         </div>
       </div>

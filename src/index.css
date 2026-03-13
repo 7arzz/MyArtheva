@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -38,6 +39,22 @@ body {
   color: var(--text-dark);
 
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== SELECTION ===== */
+
+::selection {
+  background: rgba(183, 110, 121, 0.2);
+  color: var(--text-dark);
+}
+
+::-moz-selection {
+  background: rgba(183, 110, 121, 0.2);
+  color: var(--text-dark);
 }
 
 /* ===== LINKS ===== */
@@ -46,10 +63,19 @@ a {
   text-decoration: none;
   color: var(--rose-gold);
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: var(--champagne);
+}
+
+/* ===== FOCUS ===== */
+
+:focus-visible {
+  outline: 2px solid var(--rose-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ===== BUTTON ===== */
@@ -66,12 +92,20 @@ button {
   color: white;
 
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.3s ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 25px rgba(183, 110, 121, 0.35);
+}
+
+button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(183, 110, 121, 0.25);
 }
 
 /* ===== HEADINGS ===== */
@@ -80,10 +114,12 @@ h1 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 h2 {
   font-size: 2.2rem;
+  letter-spacing: -0.005em;
 }
 
 h3 {
@@ -105,5 +141,18 @@ section {
 
   section {
     padding: 60px 6%;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -92,6 +92,12 @@
   width: 32px;
   height: 1px;
   background: var(--gold-border);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+.divisions-label:hover::before,
+.divisions-label:hover::after {
+  width: 48px;
 }
 
 .divisions-header h2 {
@@ -173,6 +179,8 @@
 .team-card {
   position: relative;
   background: var(--linen);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid var(--linen-dark);
   border-radius: 3px;
   padding: 32px 24px 28px;
@@ -204,6 +212,7 @@
   pointer-events: none;
   z-index: 0;
   border-radius: inherit;
+  transition: opacity 0.4s ease;
 }
 
 /* Gold top stripe that expands on hover */
@@ -225,7 +234,7 @@
 }
 
 .team-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) rotate(-0.5deg);
   background: var(--parchment-mid);
   border-color: var(--gold-border);
   box-shadow:
@@ -251,7 +260,7 @@
   border: 1px solid var(--gold-border);
   transition:
     border-color 0.35s ease,
-    transform 0.5s var(--ease-out-expo);
+    transform 0.55s var(--ease-out-expo);
 }
 
 /* Inner rose-tinted ring */
@@ -261,12 +270,18 @@
   inset: -2px;
   border-radius: 50%;
   border: 1px solid var(--rose-border);
-  transition: border-color 0.35s ease;
+  transition:
+    border-color 0.35s ease,
+    transform 0.5s var(--ease-out-expo);
 }
 
 .team-card:hover .team-portrait-wrap::before {
   border-color: var(--gold);
   transform: rotate(45deg) scale(1.04);
+}
+
+.team-card:hover .team-portrait-wrap::after {
+  transform: rotate(-15deg) scale(1.02);
 }
 
 .team-card img {
@@ -280,12 +295,12 @@
   filter: sepia(8%) saturate(90%);
   transition:
     filter 0.4s ease,
-    transform 0.5s var(--ease-out-expo);
+    transform 0.55s var(--ease-out-expo);
 }
 
 .team-card:hover img {
   filter: sepia(0%) saturate(100%);
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 /* ─── Role badge (wax seal style) ───────────────────── */
@@ -306,13 +321,15 @@
   color: var(--parchment);
   box-shadow: 0 2px 8px rgba(154, 85, 96, 0.4);
   transition:
-    transform 0.4s var(--ease-out-expo),
-    background 0.3s ease;
+    transform 0.45s var(--ease-out-expo),
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .team-card:hover .team-badge {
-  transform: scale(1.15) rotate(-10deg);
+  transform: scale(1.2) rotate(-12deg);
   background: var(--rose-dark);
+  box-shadow: 0 4px 12px rgba(154, 85, 96, 0.5);
 }
 
 /* ─── Name ───────────────────────────────────────────── */
@@ -349,6 +366,11 @@
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0;
+  transition: letter-spacing 0.4s var(--ease-out-expo);
+}
+
+.team-card:hover .team-role {
+  letter-spacing: 0.26em;
 }
 
 /* ─── Divider (visible on open) ─────────────────────── */
@@ -417,14 +439,31 @@
   padding: 5px 10px;
   border: 1px solid var(--rose-border);
   border-radius: 2px;
+  position: relative;
+  overflow: hidden;
   transition:
-    background 0.3s ease,
-    color 0.3s ease;
+    color 0.35s var(--ease-in-out),
+    background 0.3s ease;
+}
+
+/* Fill animation on hover */
+.team-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--rose-pale);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out-expo);
+  z-index: -1;
 }
 
 .team-link:hover {
-  background: var(--rose-pale);
   color: var(--rose-dark);
+}
+
+.team-link:hover::before {
+  transform: scaleX(1);
 }
 
 /* ─── Keyframes ──────────────────────────────────────── */
@@ -449,5 +488,9 @@
 
   .team-card:nth-child(even) {
     margin-top: 0 !important;
+  }
+
+  .team-card:hover {
+    transform: translateY(-6px) rotate(0deg);
   }
 }
