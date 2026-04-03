@@ -115,6 +115,34 @@
   bottom: 18%;
 }
 
+/* ─── Logo ────────────────────────── */
+.hero-logo {
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  border: 1px solid var(--border);
+
+  object-fit: cover;
+  margin-bottom: 32px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 0 0 6px rgba(183, 110, 121, 0.04);
+
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.hero-logo:hover {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow:
+    0 8px 30px rgba(183, 110, 121, 0.15),
+    0 0 0 10px rgba(183, 110, 121, 0.06);
+}
+
 /* ─── Eyebrow ─────────────────────── */
 
 .hero-eyebrow {

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import anime from "animejs";
 import "../styles/hero.css";
+import logoImg from "../assets/logo.jpg";
+
 function Hero() {
   useEffect(() => {
     const tl = anime.timeline({
@@ -9,10 +11,19 @@ function Hero() {
     });
 
     tl.add({
-      targets: ".hero-eyebrow",
+      targets: ".hero-logo",
       opacity: [0, 1],
-      translateY: [10, 0],
+      scale: [0.8, 1],
+      rotate: ["-10deg", "0deg"],
     })
+      .add(
+        {
+          targets: ".hero-eyebrow",
+          opacity: [0, 1],
+          translateY: [10, 0],
+        },
+        "-=600",
+      )
       .add(
         {
           targets: ".hero-title",
@@ -43,6 +54,8 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-lines"></div>
 
+      <img src={logoImg} alt="Artheva Logo" className="hero-logo" />
+
       <span className="hero-eyebrow">Artheva Company</span>
 
       <h1 className="hero-title">
@@ -54,7 +67,6 @@ function Hero() {
       </p>
 
       <button className="hero-btn">
-        {" "}
         <a
           href="#products"
           style={{ textDecoration: "none", color: "inherit" }}
