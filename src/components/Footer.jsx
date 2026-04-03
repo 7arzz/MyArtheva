@@ -25,15 +25,31 @@ function Footer() {
         <div className="footer-social">
           <h4>Follow Us</h4>
           <ul>
-            <li>Instagram</li>
-            <li>TikTok</li>
-            <li>Shopee</li>
+            <li>
+              <a
+                href="https://www.instagram.com/artheva.company/ "
+                style={{ textDecoration: "none" }}
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@arthevacompany"
+                style={{ textDecoration: "none" }}
+              >
+                TikTok
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/6282260832406">Whatsapp</a>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 Artheva. All rights reserved.</p>
+        <p>© 2026 Artheva x 7arzz. All rights reserved.</p>
       </div>
     </footer>
   );

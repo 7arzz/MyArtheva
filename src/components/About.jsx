@@ -5,12 +5,13 @@ function About() {
     <section className="about-premium" id="about">
       <div className="ap-glow"></div>
       <div className="ap-glow ap-glow-right"></div>
-      
+
       <div className="ap-container">
         <div className="ap-header">
-          <span className="ap-eyebrow">Our Story</span>
+          <span className="ap-eyebrow">Our Vision and Mision</span>
           <h2 className="ap-title">
-            Where <span className="ap-text-gradient">craft</span> meets intention
+            The goal of the{" "}
+            <span className="ap-text-gradient">Artheva Company</span>
           </h2>
           <div className="ap-line"></div>
         </div>
@@ -19,19 +20,19 @@ function About() {
           <div className="ap-glass-card">
             <div className="ap-card-icon">✧</div>
             <p>
-              We believe that beauty is not an afterthought — it is the very
-              foundation of everything we do. Each piece is shaped with careful
-              hands, unhurried attention, and a devotion to the materials that make
-              it real.
+              To become a company that produces DIY glass products that are
+              honest, beneficial to customers, high-quality, reliable, and
+              consistently meet market needs.
             </p>
           </div>
 
           <div className="ap-glass-card">
             <div className="ap-card-icon">✦</div>
             <p>
-              Born from a small atelier tucked between old pines and open fields,
-              our work carries the quietness of that place. We make things meant to
-              last, things that age with grace, things that feel like home.
+              <li>Maintain consistent quality</li>
+              <li>Inspire through design</li>
+              <li>Continuously Innovate</li>
+              <li>Develop a warm and professional customer experience</li>
             </p>
           </div>
         </div>

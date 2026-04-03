@@ -10,7 +10,7 @@ function Cart({ cart, setCart, open, setOpen }) {
   const total = cart.reduce((acc, item) => acc + item.price, 0);
 
   const sendToWhatsApp = () => {
-    const phone = "6281234567890";
+    const phone = "6282260832406";
 
     let message = "Halo, saya ingin memesan:\n\n";
 

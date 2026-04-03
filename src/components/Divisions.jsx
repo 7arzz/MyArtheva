@@ -1,14 +1,39 @@
 import { useState } from "react";
 import "../styles/divisions.css";
 
+// Import images
+import ceoImg from "../assets/anggota/CEO.jpg";
+import directProductionImg from "../assets/anggota/Direct_Production.jpg";
+import directMarketingImg from "../assets/anggota/Direct_Marketing.jpg";
+import directPrImg from "../assets/anggota/Direct_PR.jpg";
+import directHrdImg from "../assets/anggota/Direct_HRD.jpg";
+import directFinanceImg from "../assets/anggota/Direct_Finance.jpg";
+import managerRdImg from "../assets/anggota/Manager_R&D.jpg";
+import managerProductionImg from "../assets/anggota/Manager_Production.jpg";
+import purchasingManagerImg from "../assets/anggota/Purchasing_Manager.jpg";
+import qualityControlManagerImg from "../assets/anggota/Quality_Control_Manager.jpg";
+import managerMarketingImg from "../assets/anggota/Manager_Marketing.jpg";
+import salesMarketing1Img from "../assets/anggota/Sales_Marketing1.jpg";
+import salesMarketing2Img from "../assets/anggota/Sales_Marketing2.jpg";
+import marketingResearchImg from "../assets/anggota/Marketing_Research.jpg";
+import creativeDesignImg from "../assets/anggota/Creative_Design.jpg";
+import publicRelationsManager1Img from "../assets/anggota/Public_Relations_Manager1.jpg";
+import publicRelationsManager2Img from "../assets/anggota/Public_Relations_Manager2.jpg";
+import communityManagerImg from "../assets/anggota/Community_Manager.jpg";
+import trainingDevelopmentManagerImg from "../assets/anggota/Training_Development_Manager.jpg";
+import attendanceAndPayrollImg from "../assets/anggota/Attendance_and_Payroll.jpg";
+import managerFinance1Img from "../assets/anggota/Manager_Finance1.jpg";
+import managerFinance2Img from "../assets/anggota/Manager_Finance2.jpg";
+import secretaryImg from "../assets/anggota/Secretary.jpg";
+
 const teamData = [
   {
     name: "Alfina",
     surname: "Amoerita Anggraini",
     role: "CEO",
     desc: "Leads the company vision and coordinates every division to achieve innovation and sustainable growth.",
-    letter: "A",
-    badge: "✦",
+    image: ceoImg,
+    badge: "AA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -18,8 +43,8 @@ const teamData = [
     surname: "Mozarella",
     role: "Director of Production",
     desc: "Oversees production operations and ensures product quality and efficiency.",
-    letter: "A",
-    badge: "✦",
+    image: directProductionImg,
+    badge: "AM",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -29,8 +54,8 @@ const teamData = [
     surname: "Dwi Fellysia",
     role: "Director of Marketing",
     desc: "Develops marketing strategies to strengthen brand awareness and expand market reach.",
-    letter: "R",
-    badge: "✦",
+    image: directMarketingImg,
+    badge: "RF",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -40,8 +65,8 @@ const teamData = [
     surname: "Rahmasari",
     role: "Director of Public Relations",
     desc: "Builds strong communication between the company and the public.",
-    letter: "A",
-    badge: "✦",
+    image: directPrImg,
+    badge: "AR",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -51,8 +76,8 @@ const teamData = [
     surname: "Bunga Amelia",
     role: "Director of HRD",
     desc: "Manages human resources and fosters a positive organizational culture.",
-    letter: "S",
-    badge: "✦",
+    image: directHrdImg,
+    badge: "SA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -62,8 +87,8 @@ const teamData = [
     surname: "Shavira",
     role: "Director of Finance",
     desc: "Responsible for financial planning, budgeting, and financial stability.",
-    letter: "S",
-    badge: "✦",
+    image: directFinanceImg,
+    badge: "SS",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -73,8 +98,8 @@ const teamData = [
     surname: "Aliyah Renata",
     role: "Manager Research and Development",
     desc: "Focuses on innovation, product improvement, and creative solutions.",
-    letter: "S",
-    badge: "✦",
+    image: managerRdImg,
+    badge: "SR",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -84,8 +109,8 @@ const teamData = [
     surname: "Anggraini",
     role: "Manager Production",
     desc: "Coordinates production activities to ensure smooth operations.",
-    letter: "R",
-    badge: "✦",
+    image: managerProductionImg,
+    badge: "RA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -95,8 +120,8 @@ const teamData = [
     surname: "Naisilah Chusnul Pratama",
     role: "Purchasing Manager",
     desc: "Handles procurement of materials and manages supplier relations.",
-    letter: "W",
-    badge: "✦",
+    image: purchasingManagerImg,
+    badge: "WP",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -106,8 +131,8 @@ const teamData = [
     surname: "Yoga Perdana",
     role: "Quality Control Manager",
     desc: "Ensures every product meets quality standards before release.",
-    letter: "A",
-    badge: "✦",
+    image: qualityControlManagerImg,
+    badge: "AP",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -117,8 +142,8 @@ const teamData = [
     surname: "Ilham Amerta",
     role: "Manager Marketing",
     desc: "Leads marketing campaigns and ensures brand visibility in the market.",
-    letter: "A",
-    badge: "✦",
+    image: managerMarketingImg,
+    badge: "AA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -128,8 +153,8 @@ const teamData = [
     surname: "Savira Damayanti",
     role: "Sales Marketing",
     desc: "Supports marketing activities and drives product sales to customers.",
-    letter: "D",
-    badge: "✦",
+    image: salesMarketing1Img,
+    badge: "DD",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -139,8 +164,8 @@ const teamData = [
     surname: "Aisya Zhafira",
     role: "Sales Marketing",
     desc: "Assists marketing campaigns and helps reach potential customers.",
-    letter: "K",
-    badge: "✦",
+    image: salesMarketing2Img,
+    badge: "KZ",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -150,8 +175,8 @@ const teamData = [
     surname: "Odelia Bagus",
     role: "Marketing Research",
     desc: "Conducts research and analyzes market trends for better strategies.",
-    letter: "G",
-    badge: "✦",
+    image: marketingResearchImg,
+    badge: "GB",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -161,8 +186,8 @@ const teamData = [
     surname: "Zahra Amaura",
     role: "Creative Design",
     desc: "Creates visual concepts and designs to strengthen the brand identity.",
-    letter: "A",
-    badge: "✦",
+    image: creativeDesignImg,
+    badge: "AA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -172,8 +197,8 @@ const teamData = [
     surname: "Rahayu Wahyu N",
     role: "Public Relations Manager",
     desc: "Maintains public communication and strengthens the company image.",
-    letter: "M",
-    badge: "✦",
+    image: publicRelationsManager1Img,
+    badge: "MN",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -183,8 +208,8 @@ const teamData = [
     surname: "Ayuningtyas",
     role: "Public Relations Manager",
     desc: "Supports public relations activities and builds community engagement.",
-    letter: "D",
-    badge: "✦",
+    image: publicRelationsManager2Img,
+    badge: "DA",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -194,8 +219,8 @@ const teamData = [
     surname: "Maulida",
     role: "Community Manager",
     desc: "Builds relationships with communities and manages engagement.",
-    letter: "D",
-    badge: "✦",
+    image: communityManagerImg,
+    badge: "DM",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -205,8 +230,8 @@ const teamData = [
     surname: "Pramundita Putri",
     role: "Training Development Manager",
     desc: "Designs training programs to develop team skills and knowledge.",
-    letter: "W",
-    badge: "✦",
+    image: trainingDevelopmentManagerImg,
+    badge: "WP",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -216,8 +241,8 @@ const teamData = [
     surname: "Salsabilla",
     role: "Attendance and Payroll",
     desc: "Manages employee attendance records and payroll processes.",
-    letter: "N",
-    badge: "✦",
+    image: attendanceAndPayrollImg,
+    badge: "NS",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -227,8 +252,8 @@ const teamData = [
     surname: "Nur Azizah Putriani",
     role: "Manager Finance 1",
     desc: "Supports financial management and reporting activities.",
-    letter: "K",
-    badge: "✦",
+    image: managerFinance1Img,
+    badge: "KP",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -238,8 +263,8 @@ const teamData = [
     surname: "Azzahra Putri L",
     role: "Manager Finance 2",
     desc: "Assists financial operations and ensures accurate records.",
-    letter: "C",
-    badge: "✦",
+    image: managerFinance2Img,
+    badge: "CL",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -249,8 +274,8 @@ const teamData = [
     surname: "Siva Ayuningtyas",
     role: "Secretary",
     desc: "Handles administrative coordination and documentation for the company.",
-    letter: "W",
-    badge: "✦",
+    image: secretaryImg,
+    badge: "WS",
     bg: "#e8d5c4",
     color: "rgba(183,110,121,0.5)",
   },
@@ -293,15 +318,7 @@ function Divisions() {
           >
             <div className="team-portrait-wrap">
               <div className="team-portrait">
-                <div
-                  className="team-portrait-inner"
-                  style={{
-                    background: member.bg,
-                    color: member.color,
-                  }}
-                >
-                  {member.letter}
-                </div>
+                <img src={member.image} alt={member.name} />
               </div>
 
               <div className="team-badge">{member.badge}</div>

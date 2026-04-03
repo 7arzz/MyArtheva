@@ -4,7 +4,7 @@ function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Choose Your Mirror",
+      title: "Choose the Mirror",
       desc: "Pick the DIY mirror design that fits your style and aesthetic.",
     },
     {
@@ -14,8 +14,8 @@ function HowItWorks() {
     },
     {
       number: "03",
-      title: "Install Easily",
-      desc: "Stick and arrange the mirror on your wall with simple instructions.",
+      title: "Buy",
+      desc: "Buy the mirror you like and wait until it arrives at your home.",
     },
   ];
 

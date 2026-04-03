@@ -1,45 +1,33 @@
 import "../styles/product.css";
+import bigMirrorImg from "../assets/BigMirror.jpg";
+import smallMirrorImg from "../assets/SmallMirror.jpg";
 
 function Products({ setCart }) {
   const products = [
     {
       icon: "◈",
-      tag: "Rose · Vetiver",
-      title: "Dusk",
-      accent: "Ritual",
-      desc: "A warm, grounding blend for evening — vetiver root and Bulgarian rose in a base of golden jojoba.",
+      tag: "Big Mirror",
+      title: "Big",
+      accent: "Mirror",
+      image: bigMirrorImg,
+      desc: "An artisanal, large-format mirror frame hand-carved from reclaimed teak, reflecting both light and legacy.",
+      price: 25000,
+    },
+    {
+      icon: "◈",
+      tag: "Small Mirror",
+      title: "Small",
+      accent: "Mirror",
+      image: smallMirrorImg,
+      desc: "A delicate, circular vanity mirror framed in aged brass — a subtle statement for intimate spaces.",
       price: 20000,
-    },
-    {
-      icon: "✦",
-      tag: "administrative · admin",
-      title: "Morning",
-      accent: "Bloom",
-      desc: "Neroli blossom and cedarwood bark, pressed into a weightless serum that warms to the skin.",
-      price: 25000,
-    },
-    {
-      icon: "◇",
-      tag: "Jasmine · Sandalwood",
-      title: "Still",
-      accent: "Water Balm",
-      desc: "Night jasmine and aged sandalwood in a slow-melting balm. For hands that have worked hard.",
-      price: 25000,
-    },
-    {
-      icon: "❋",
-      tag: "Lavender · Amber",
-      title: "Ember",
-      accent: "Rest",
-      desc: "True lavender and warm amber resin, blended for the quiet hour before sleep takes you.",
-      price: 25000,
     },
   ];
 
   return (
     <section className="products" id="products">
       <div className="products-header">
-        <p className="products-label">The Collection</p>
+        <p className="products-label">The Products</p>
         <h2>
           Made with <em>slow</em> intention
         </h2>
@@ -50,6 +38,7 @@ function Products({ setCart }) {
         {products.map((p, index) => (
           <article className="product-card" key={index}>
             <div className="product-image">
+              <img src={p.image} alt={`${p.title} ${p.accent}`} />
               <span className="product-image-icon">{p.icon}</span>
 
               <div className="product-image-overlay">

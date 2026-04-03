@@ -50,8 +50,7 @@ function Hero() {
       </h1>
 
       <p className="hero-sub">
-        Design your own DIY mirror and transform your room into a creative
-        aesthetic space with Artheva.
+        dari bintang membawa sinar perubahan untuk masa depan
       </p>
 
       <button className="hero-btn">
